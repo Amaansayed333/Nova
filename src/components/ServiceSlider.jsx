@@ -1,5 +1,5 @@
 import { Swiper, SwiperSlide } from "swiper/react"
-import { Navigation, Pagination } from "swiper/modules"
+import { Navigation, Pagination, Autoplay } from "swiper/modules"
 import "swiper/css"
 import "swiper/css/navigation"
 import "swiper/css/pagination"
@@ -10,36 +10,33 @@ export default function ServiceSlider({ title, slides }) {
       <h2 className="text-3xl font-bold text-secondary mb-8">{title}</h2>
 
       <Swiper
-        modules={[Navigation, Pagination]}
+        modules={[Navigation, Pagination, Autoplay]}
         navigation
         pagination={{ clickable: true }}
-        spaceBetween={24}
+        autoplay={{ delay: 3500, disableOnInteraction: false }}
+        spaceBetween={20}
         slidesPerView={1}
         breakpoints={{
           640: { slidesPerView: 1 },
           768: { slidesPerView: 2 },
           1024: { slidesPerView: 3 },
         }}
+        className="pb-10"
       >
         {slides.map((slide, index) => (
           <SwiperSlide key={index}>
-            <div className="bg-white rounded-2xl shadow-lg overflow-hidden group">
+            <div className="bg-white rounded-2xl shadow-lg overflow-hidden h-full flex flex-col">
               {/* Image */}
-              <div className="h-56 bg-slate-200 flex items-center justify-center text-slate-500">
-                {/* Replace later with image */}
-                {slide.image ? (
-                  <img
-                    src={slide.image}
-                    alt={slide.title}
-                    className="w-full h-full object-cover"
-                  />
-                ) : (
-                  <span className="text-sm">Image Coming Soon</span>
-                )}
+              <div className="h-56 w-full overflow-hidden">
+                <img
+                  src={slide.image}
+                  alt={slide.title}
+                  className="w-full h-full object-cover hover:scale-110 transition duration-500"
+                />
               </div>
 
               {/* Content */}
-              <div className="p-6">
+              <div className="p-6 flex-1">
                 <h3 className="text-xl font-semibold text-secondary">
                   {slide.title}
                 </h3>
