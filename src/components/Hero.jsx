@@ -6,13 +6,13 @@ export default function Hero() {
     <div
       className="min-h-screen flex items-center pt-24 relative"
       style={{
-        backgroundImage: "url('/global_enterprise_home.png')",
+        backgroundImage: "url('/Global2.jpg')",
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}
     >
-      {/* Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-r from-primary/90 to-secondary/80"></div>
+      {/* SOLID BLUE OVERLAY (NO GRADIENT) */}
+      <div className="absolute inset-0 bg-primary/85"></div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 text-white">
         <motion.h1
@@ -25,13 +25,14 @@ export default function Hero() {
         </motion.h1>
 
         <motion.p
-          initial={{ y: 40, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.3 }}
-          className="mt-6 text-lg max-w-2xl text-slate-200 leading-relaxed"
-        >
-          Nova Global Enterprises is a diversified trading powerhouse delivering excellence in metals, scrap materials, agricultural products, food commodities, livestock, and real estate services across India. With a strong sourcing network, transparent operations, and a commitment to quality, we provide reliable supply solutions that support industries, businesses, and long-term partnerships.
-        </motion.p>
+            initial={{ y: 40, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+            className="mt-6 text-lg max-w-2xl text-slate-200 leading-relaxed"
+          >
+            Nova Global Enterprises is a diversified import and export trading powerhouse delivering excellence in metals, scrap materials, minerals, agricultural products, food commodities, poultry, livestock, and real estate services across India and international markets. With a strong sourcing network, transparent operations, and a commitment to quality, we provide reliable supply and export solutions that support industries, businesses, and long-term global partnerships.
+          </motion.p>
+
 
         <motion.div
           initial={{ y: 40, opacity: 0 }}
@@ -41,7 +42,7 @@ export default function Hero() {
         >
           {/* Explore Services */}
           <Link to="/services">
-            <button className="bg-lightBlue text-primary px-6 py-3 rounded-full font-semibold hover:bg-white transition">
+            <button className="bg-secondary text-white px-6 py-3 rounded-full font-semibold hover:bg-lightBlue hover:text-primary transition">
               Explore Services
             </button>
           </Link>

@@ -5,31 +5,32 @@ export default function ServiceHoverCard({ service }) {
   const [expanded, setExpanded] = useState(false)
   const closeTimerRef = useRef(null)
 
-  const handleMouseEnter = () => {
-    // open immediately
+  const handleOpen = () => {
     setExpanded(true)
 
-    // clear any existing timer
     if (closeTimerRef.current) {
       clearTimeout(closeTimerRef.current)
     }
 
-    // auto close after 5 seconds
+    // Auto close after 3 sec on desktop hover
     closeTimerRef.current = setTimeout(() => {
       setExpanded(false)
     }, 3000)
   }
 
-  const handleMouseLeave = () => {
-    // optional: do nothing so it stays for 5 sec even if mouse leaves
+  const handleClose = () => {
+    setExpanded(false)
+    if (closeTimerRef.current) {
+      clearTimeout(closeTimerRef.current)
+    }
   }
 
   return (
     <>
       {/* NORMAL CARD */}
       <div
-        onMouseEnter={handleMouseEnter}
-        onMouseLeave={handleMouseLeave}
+        onMouseEnter={handleOpen}
+        onClick={handleOpen}   // 👈 mobile tap support
         className="relative group rounded-2xl overflow-hidden shadow-xl cursor-pointer"
       >
         <img
@@ -55,22 +56,29 @@ export default function ServiceHoverCard({ service }) {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 flex items-center justify-center bg-black/60"
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 px-4"
+            onClick={handleClose}
           >
             <motion.div
-              initial={{ scale: 0.85, y: 60 }}
+              initial={{ scale: 0.9, y: 40 }}
               animate={{ scale: 1, y: 0 }}
-              exit={{ scale: 0.85, y: 60 }}
-              transition={{ duration: 0.4 }}
-              className="relative w-[30vw] h-[70vh] bg-white rounded-3xl overflow-hidden shadow-2xl"
+              exit={{ scale: 0.9, y: 40 }}
+              transition={{ duration: 0.35 }}
+              onClick={(e) => e.stopPropagation()}
+              className="
+                relative 
+                w-full sm:w-[80%] md:w-[60%] lg:w-[30vw]
+                h-[85vh] md:h-[70vh]
+                bg-white rounded-3xl overflow-hidden shadow-2xl
+              "
             >
               <img
                 src={service.image}
                 alt={service.title}
-                className="w-full h-1/2 object-cover"
+                className="w-full h-56 md:h-1/2 object-cover"
               />
 
-              <div className="p-8">
+              <div className="p-6 md:p-8 overflow-y-auto h-[calc(100%-14rem)] md:h-auto">
                 <h3 className="text-2xl font-bold text-secondary">
                   {service.title}
                 </h3>
@@ -84,6 +92,14 @@ export default function ServiceHoverCard({ service }) {
                     <li key={i}>{item}</li>
                   ))}
                 </ul>
+
+                {/* Close button for mobile */}
+                <button
+                  onClick={handleClose}
+                  className="mt-6 w-full bg-secondary text-white py-3 rounded-lg font-semibold hover:bg-primary transition md:hidden"
+                >
+                  Close
+                </button>
               </div>
             </motion.div>
           </motion.div>
