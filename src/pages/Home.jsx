@@ -1,6 +1,8 @@
 import { motion } from "framer-motion"
 import Hero from "../components/Hero"
 import ServiceCard from "../components/ServiceCard"
+import ServiceSlider from "../components/ServiceSlider"
+
 
 export default function Home() {
   const services = [

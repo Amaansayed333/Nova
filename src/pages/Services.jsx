@@ -130,22 +130,22 @@ export default function Services() {
           {
             title: "Dry Copra",
             desc: "Premium quality dry copra for oil & food industries.",
-            image: "../../public/Dry Copra.jpg",
+            image: "../../public/Dry_copra.jpg",
           },
           {
             title: "Ball Copra",
             desc: "High grade ball copra for religious and commercial use.",
-            image: "../../public/Ball Copra.jpg",
+            image: "../../public/Ball_copra.jpg",
           },
           {
             title: "Food Commodities",
             desc: "Bulk food commodities supply.",
-            image: "../../public/Food Commodities.jpg",
+            image: "../../public/Food_Commodities.jpg",
           },
           {
             title: "Export Food Supply",
             desc: "International food export support.",
-            image: "../../public/Export Food Supply.jpg",
+            image: "../../public/Export_Food_Supply.jpg",
           },
         ]}
       />
