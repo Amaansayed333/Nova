@@ -25,7 +25,7 @@ export default function Contact() {
             <div className="space-y-4 text-slate-700 text-lg">
               <p><strong>Company:</strong> Nova Global Enterprises</p>
               <p><strong>Address:</strong> Sharadadevi Nagara, Tumakuru, Karnataka – 572103</p>
-              <p><strong>Phone:</strong> 9743668698</p>
+              <p><strong>Phone:</strong> 6364333564</p>
               <p><strong>Email:</strong> bnmuruli@gmail.com</p>
             </div>
 
