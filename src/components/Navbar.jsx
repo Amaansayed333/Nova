@@ -22,9 +22,15 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
         
         {/* LOGO – Bigger Now */}
-        <h1 className="text-3xl font-bold text-white tracking-wide">
-          NOVA Global
-        </h1>
+        <div className="flex items-end gap-2">
+          <h1 className="text-3xl font-bold text-white tracking-wide">
+            NOVA Global
+          </h1>
+          <span className="text-sm md:text-base font-medium text-lightBlue tracking-wide">
+            Import & Export
+          </span>
+        </div>
+
 
         {/* DESKTOP LINKS */}
         <div className="hidden md:flex space-x-8">

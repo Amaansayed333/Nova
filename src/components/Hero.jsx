@@ -24,14 +24,27 @@ export default function Hero() {
           NOVA Global Enterprises
         </motion.h1>
 
+        <motion.h2
+          initial={{ y: 40, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.8, delay: 0.15 }}
+          className="mt-2 text-xl md:text-2xl font-semibold tracking-widest text-lightBlue uppercase"
+        >
+          Import & Export | Global Trading Solutions
+        </motion.h2>
+
         <motion.p
-            initial={{ y: 40, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-            className="mt-6 text-lg max-w-2xl text-slate-200 leading-relaxed"
-          >
-            Nova Global Enterprises is a diversified import and export trading powerhouse delivering excellence in metals, scrap materials, minerals, agricultural products, food commodities, poultry, livestock, and real estate services across India and international markets. With a strong sourcing network, transparent operations, and a commitment to quality, we provide reliable supply and export solutions that support industries, businesses, and long-term global partnerships.
-          </motion.p>
+  initial={{ y: 40, opacity: 0 }}
+  animate={{ y: 0, opacity: 1 }}
+  transition={{ duration: 0.8, delay: 0.3 }}
+  className="mt-6 text-lg max-w-2xl text-slate-200 leading-relaxed"
+>
+  Nova Global Enterprises is a diversified{" "}
+  <span className="text-lightBlue font-semibold">Import & Export</span>{" "}
+  trading powerhouse delivering excellence in metals, scrap materials, minerals, agricultural products, food commodities, poultry, livestock, and real estate services across India and international markets. With a strong{" "}
+  <span className="text-lightBlue font-semibold">Import & Export sourcing network</span>, transparent operations, and a commitment to quality, we provide reliable supply and export solutions that support industries, businesses, and long-term global partnerships.
+</motion.p>
+
 
 
         <motion.div
