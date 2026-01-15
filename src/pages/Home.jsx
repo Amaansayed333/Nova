@@ -17,7 +17,7 @@ export default function Home() {
     {
       title: "Minerals & Ores Trading",
       desc: "Supplying iron ore, bauxite ore and laterite ores of different grades for construction, infrastructure and industrial use.",
-      image: "/Nova_minerals.jpeg",
+      image: "/ore-trading.png",
     },
     {
       title: "Cereals, Rice & Masala Spices",

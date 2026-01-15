@@ -30,7 +30,7 @@ export default function Services() {
     {
       title: "Minerals & Ores Trading",
       desc: "Trading of high-quality minerals and ores including iron ore, bauxite ore and laterite ores of different grades for industrial and construction use.",
-      image: "/Nova_minerals.jpeg",
+      image: "/ore-trading.png",
       details: [
         "Iron ore",
         "Bauxite ore",
